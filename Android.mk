@@ -20,8 +20,7 @@
 # are responsible for having their own logic, for fine-grained control.
 
 ifeq ($(BOARD_VENDOR),motorola-qcom)
-ifneq ($(filter msm8960 msm8226,$(TARGET_BOARD_PLATFORM)),)
-ifeq ($(filter falcon,$(TARGET_DEVICE)),)
+ifeq ($(filter msm8960_jbbl msm8960,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -59,6 +58,5 @@ include $(BUILD_PREBUILT)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
 endif
 endif
