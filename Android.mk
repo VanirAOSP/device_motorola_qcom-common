@@ -20,7 +20,7 @@
 # are responsible for having their own logic, for fine-grained control.
 
 ifeq ($(BOARD_VENDOR),motorola-qcom)
-ifeq ($(filter msm8960_jbbl msm8960,$(TARGET_DEVICE)),)
+ifeq ($(filter falcon msm8960_jbbl msm8960,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
