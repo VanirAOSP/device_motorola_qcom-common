@@ -78,13 +78,8 @@ BLUETOOTH_HCI_USE_MCT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_FLUENCE_INCALL := true
-BOARD_USES_FLUENCE_FOR_VOIP := true
-BOARD_USES_SEPERATED_AUDIO_INPUT := true
-BOARD_USES_SEPERATED_VOICE_SPEAKER := true
-AUDIO_FEATURE_DISABLED_FM := true
-QCOM_PROXY_DEVICE_ENABLED := true
-QCOM_USBAUDIO_ENABLED := true
+USE_CUSTOM_AUDIO_POLICY := 1
+BOARD_USES_MOTOROLA_EMU_AUDIO := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -101,19 +96,6 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_SUPPRESS_EMMC_WIPE := true
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_PIC := true
-    WITH_DEXPREOPT_BOOT_IMG_ONLY := false
-    ifneq ($(TARGET_BUILD_VARIANT),user)
-      # Retain classes.dex in APK's for non-user builds
-      DEX_PREOPT_DEFAULT := nostripping
-    endif
-  endif
-endif
 
 #TWRP
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
